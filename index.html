@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>特定商取引法に基づく表記 | ICORE</title>
+  <style>
+    :root {
+      --ink: #2f2f32;
+      --muted: #7b7474;
+      --coral: #e98375;
+      --peach: #f8c4ad;
+      --lavender: #c6b2db;
+      --gold: #e8bd75;
+      --paper: #fffaf8;
+      --line: rgba(211, 142, 130, 0.28);
+      --shadow: 0 22px 70px rgba(184, 117, 107, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.85;
+      background:
+        radial-gradient(circle at 9% 12%, rgba(198, 178, 219, 0.28), transparent 28%),
+        radial-gradient(circle at 91% 5%, rgba(248, 196, 173, 0.42), transparent 24%),
+        linear-gradient(135deg, #fff 0%, #fff8f5 46%, #f5b3a4 100%);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      background-image:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.7), transparent 22%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent 45%);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 38px;
+      align-items: center;
+      min-height: 330px;
+      margin-bottom: 34px;
+    }
+
+    .hero > div {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 18px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      display: block;
+      width: 44px;
+      height: 1px;
+      content: "";
+      background: linear-gradient(90deg, var(--lavender), var(--gold));
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(34px, 7vw, 72px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .accent {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 0 0.16em 0.1em;
+      color: #fff;
+      background: linear-gradient(100deg, var(--lavender), var(--coral) 56%, var(--gold));
+      transform: skewX(-7deg);
+    }
+
+    .accent span {
+      display: inline-block;
+      transform: skewX(7deg);
+    }
+
+    .lead {
+      max-width: 660px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .visual {
+      position: relative;
+      align-self: stretch;
+      min-height: 320px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 68% center;
+      filter: saturate(0.96) brightness(1.04);
+    }
+
+    .visual::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(180deg, transparent 34%, rgba(255, 250, 248, 0.88) 100%);
+    }
+
+    .company-mark {
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      z-index: 1;
+      color: rgba(232, 131, 117, 0.95);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 56px;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table tr {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .table tr:last-child {
+      border-bottom: 0;
+    }
+
+    .table th,
+    .table td {
+      padding: 24px 30px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .table th {
+      width: 31%;
+      color: #9d6b78;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      background: linear-gradient(90deg, rgba(248, 196, 173, 0.22), rgba(255, 255, 255, 0));
+    }
+
+    .table td {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      margin: 24px 0 0;
+      color: rgba(47, 47, 50, 0.58);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(100% - 28px, 640px);
+        padding: 34px 0 52px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        min-height: auto;
+      }
+
+      .visual {
+        min-height: 220px;
+      }
+
+      .table,
+      .table tbody,
+      .table tr,
+      .table th,
+      .table td {
+        display: block;
+        width: 100%;
+      }
+
+      .table th {
+        padding: 20px 22px 6px;
+        background: transparent;
+      }
+
+      .table td {
+        padding: 0 22px 20px;
+      }
+
+      .note {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 430px) {
+      body {
+        line-height: 1.78;
+        background:
+          radial-gradient(circle at 8% 8%, rgba(198, 178, 219, 0.22), transparent 26%),
+          radial-gradient(circle at 100% 0%, rgba(248, 196, 173, 0.34), transparent 32%),
+          linear-gradient(150deg, #fff 0%, #fff8f5 58%, #f9d0c5 100%);
+      }
+
+      .page {
+        width: min(100% - 24px, 390px);
+        padding: 28px 0 42px;
+      }
+
+      .hero {
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .eyebrow {
+        gap: 10px;
+        margin-bottom: 14px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+      }
+
+      .eyebrow::before {
+        width: 34px;
+      }
+
+      h1 {
+        font-size: 38px;
+        line-height: 1.13;
+      }
+
+      .accent {
+        margin-top: 10px;
+        padding: 0 0.14em 0.08em;
+      }
+
+      .lead {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .visual {
+        min-height: auto;
+        aspect-ratio:  4 /  3;
+      }
+
+      .visual img {
+        object-position: 63% center;
+      }
+
+      .company-mark {
+        right: 14px;
+        bottom: 12px;
+        font-size: 36px;
+      }
+
+      .table th {
+        padding: 17px 16px 4px;
+        font-size: 13px;
+      }
+
+      .table td {
+        padding: 0 16px 17px;
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .note {
+        margin-top: 18px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">LEGAL INFORMATION</p>
+        <h1 id="page-title">
+          特定商取引法に<br>
+          <span class="accent"><span>基づく表記</span></span>
+        </h1>
+        <p class="lead">
+          株式会社ICOREが提供する商品・サービスのお申し込みに関する販売条件、決済方法、返品・返金等の表示です。
+        </p>
+      </div>
+      <figure class="visual" aria-label="ICOREのサービスイメージ">
+        <img src="line_oa_chat_260629_165828.jpg" alt="">
+        <figcaption class="company-mark">ICORE</figcaption>
+      </figure>
+    </section>
+
+    <section class="panel" aria-label="特定商取引法に基づく表記の詳細">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">販売会社の名称</th>
+            <td>株式会社ICORE</td>
+          </tr>
+          <tr>
+            <th scope="row">運営責任者</th>
+            <td>代表取締役 安藤大嗣</td>
+          </tr>
+          <tr>
+            <th scope="row">電話番号</th>
+            <td>090-6118-8553</td>
+          </tr>
+          <tr>
+            <th scope="row">メールアドレス</th>
+            <td>icore.officials@gmail.com</td>
+          </tr>
+          <tr>
+            <th scope="row">お支払い方法</th>
+            <td>クレジットカードにて決済</td>
+          </tr>
+          <tr>
+            <th scope="row">販売価格</th>
+            <td>商品申込ページに記載</td>
+          </tr>
+          <tr>
+            <th scope="row">商品代金以外の必要金額</th>
+            <td>ありません。</td>
+          </tr>
+          <tr>
+            <th scope="row">返品・返金について</th>
+            <td>コンテンツの性質上、購入後のご返金には応じることができません。</td>
+          </tr>
+          <tr>
+            <th scope="row">動作環境</th>
+            <td>Safari 12以降 / Google Chrome 最新版 / Firefox 最新版</td>
+          </tr>
+          <tr>
+            <th scope="row">免責事項</th>
+            <td>サーバートラブル・ネットワークトラブルその他不可抗力により生じたサービスの提供不能・中断等については一切の責任を負いません。</td>
+          </tr>
+          <tr>
+            <th scope="row">表現、及び商品に関する注意書き</th>
+            <td>本商品に示された表現や再現性には個人差があり、必ずしも利益や効果を保証したものではございません。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="note">© ICORE Inc.</p>
+  </main>
+</body>
+</html>
