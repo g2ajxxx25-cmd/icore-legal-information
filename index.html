@@ -3,703 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRACEクリーム | 自分を満たすセルフケア</title>
+  <title>特定商取引法に基づく表記 | 株式会社ICORE</title>
   <style>
     :root {
-      --ink: #3a302d;
-      --soft-ink: #6f615c;
-      --muted: #9d8c86;
-      --paper: #fff7f4;
-      --ivory: #fffaf7;
-      --terra: #cb684d;
-      --beige: #f3e7e2;
-      --taupe: #bfa79a;
-      --line: rgba(191, 167, 154, 0.38);
-      --shadow: none;
+      --text: #303033;
+      --muted: #7a7373;
+      --coral: #ee7e70;
+      --peach: #f7c5b4;
+      --lavender: #beb0d9;
+      --gold: #f4bd72;
+      --line: #ead8d3;
+      --bg: #fffaf8;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      color: var(--ink);
-      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "YuGothic", system-ui, sans-serif;
-      line-height: 1.86;
-      background: #eee5df;
+      color: var(--text);
+      font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.8;
+      background:
+        linear-gradient(135deg, rgba(190, 176, 217, 0.22), transparent 32%),
+        linear-gradient(315deg, rgba(247, 197, 180, 0.6), transparent 38%),
+        var(--bg);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .phone {
-      width: 390px;
-      max-width: 100%;
-      min-height: 100vh;
+    .page {
+      width: min(860px, calc(100% - 20px));
+      max-width: 390px;
       margin: 0 auto;
-      overflow: hidden;
-      background: var(--ivory);
-      box-shadow: 0 0 0 1px rgba(83, 59, 51, 0.1);
+      padding: 44px 0 56px;
     }
 
-    .section {
-      padding: 56px 22px;
-      border-bottom: 1px solid var(--line);
-      background: var(--ivory);
+    .header {
+      margin-bottom: 28px;
+      text-align: center;
     }
 
-    .section.tint {
-      background: var(--paper);
-    }
-
-    .section.deep {
-      color: var(--ink);
-      background: #f1d5cf;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 628px;
-      padding: 34px 22px 28px;
-      background: #fff7f4;
-    }
-
-    .hero.alt {
-      min-height: 574px;
-      color: var(--ink);
-      background: #f1d5cf;
-    }
-
-    .hero::after {
-      position: absolute;
-      top: 92px;
-      right: 22px;
-      width: 128px;
-      height: 212px;
-      border: 1px solid var(--line);
+    .logo {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 18px;
       border-radius: 8px;
-      content: "";
-      background: rgba(255, 255, 255, 0.42);
-      opacity: 0.72;
-    }
-
-    .hero.alt::after {
-      opacity: 0.34;
-    }
-
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 84px;
-      color: var(--terra);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-    }
-
-    .brand span {
-      font-size: 29px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-    }
-
-    .hero.alt .brand,
-    .hero.alt .label {
-      color: var(--terra);
+      box-shadow: 0 14px 34px rgba(220, 119, 104, 0.18);
+      object-fit: cover;
     }
 
     .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 17px;
-      color: var(--terra);
+      margin: 0 0 8px;
+      color: var(--coral);
       font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-    }
-
-    .label::before {
-      width: 34px;
-      height: 1px;
-      content: "";
-      background: currentColor;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.12em;
     }
 
     h1 {
-      font-size: 34px;
-      font-weight: 800;
-      line-height: 1.44;
+      margin: 0;
+      font-size: clamp(24px, 4.8vw, 34px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.35;
     }
 
-    h2 {
-      margin-bottom: 24px;
-      font-size: 27px;
-      font-weight: 800;
-      line-height: 1.48;
+    .rule {
+      width: 112px;
+      height: 2px;
+      margin: 18px auto 0;
+      background: linear-gradient(90deg, var(--lavender), var(--coral), var(--gold));
     }
 
-    h3 {
-      margin-bottom: 9px;
-      color: var(--terra);
-      font-size: 16px;
-      line-height: 1.55;
+    .card {
+      border: 1px solid rgba(234, 216, 211, 0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 18px 48px rgba(188, 112, 101, 0.12);
     }
 
-    .lead,
-    .body-copy {
-      color: var(--soft-ink);
-      font-size: 15px;
+    dl {
+      margin: 0;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+    }
+
+    dt,
+    dd {
+      margin: 0;
+      padding: 18px 22px;
+    }
+
+    dt {
+      color: #9d6670;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(247, 197, 180, 0.18);
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      white-space: normal;
+    }
+
+    dd {
+      font-size: 14px;
       font-weight: 500;
-      line-height: 2;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      white-space: normal;
     }
 
-    .lead {
-      margin-top: 25px;
-    }
-
-    .hero.alt .lead,
-    .deep .body-copy {
-      color: var(--soft-ink);
-    }
-
-    .strong {
-      color: var(--terra);
-      font-weight: 800;
-    }
-
-    .hero.alt .strong,
-    .deep .strong {
-      color: var(--terra);
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 56px;
-      margin-top: 30px;
-      border-radius: 999px;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      background: var(--terra);
-      box-shadow: none;
-    }
-
-    .hero.alt .cta,
-    .deep .cta {
-      color: #fff;
-      background: var(--terra);
-      box-shadow: none;
-    }
-
-    .note {
-      margin-top: 14px;
+    .footer {
+      margin-top: 18px;
       color: var(--muted);
       font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .hero.alt .note,
-    .deep .note {
-      color: var(--muted);
-    }
-
-    .stack {
-      display: grid;
-      gap: 17px;
-    }
-
-    .check-list,
-    .simple-list {
-      display: grid;
-      gap: 11px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .check-list li,
-    .simple-list li {
-      position: relative;
-      padding: 14px 14px 14px 42px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: var(--soft-ink);
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.65;
-      background: rgba(255, 255, 255, 0.76);
-    }
-
-    .check-list li::before,
-    .simple-list li::before {
-      position: absolute;
-      top: 16px;
-      left: 15px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      color: #fff;
-      content: "✓";
-      font-size: 12px;
-      font-weight: 900;
-      line-height: 18px;
-      text-align: center;
-      background: var(--terra);
-    }
-
-    .quote {
-      padding: 19px;
-      border-left: 3px solid var(--terra);
-      border-radius: 0 8px 8px 0;
-      color: var(--ink);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.84;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .deep .quote {
-      border-color: var(--terra);
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.62);
-      box-shadow: none;
-    }
-
-    .photo-slot {
-      display: grid;
-      place-items: center;
-      height: 250px;
-      margin-bottom: 24px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: #9a776c;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .product-card,
-    .info-card,
-    .voice-card,
-    .faq-card,
-    .studio-card {
-      padding: 20px 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .product-card {
       text-align: center;
     }
 
-    .product-visual {
-      width: 116px;
-      height: 178px;
-      margin: 0 auto 18px;
-      border: 1px solid rgba(191, 167, 154, 0.58);
-      border-radius: 8px;
-      background: #fff7f4;
-      box-shadow: none;
-    }
+    @media (max-width: 430px) {
+      .page {
+        width: calc(100% - 14px);
+        max-width: 390px;
+        padding: 24px 0 36px;
+      }
 
-    .price {
-      color: var(--ink);
-      font-size: 25px;
-      line-height: 1.3;
-    }
+      .logo {
+        width: 66px;
+        height: 66px;
+        margin-bottom: 14px;
+      }
 
-    .price span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
+      .label {
+        font-size: 10px;
+      }
 
-    .card-list {
-      display: grid;
-      gap: 13px;
-      margin-top: 17px;
-    }
+      h1 {
+        font-size: clamp(20px, 6.2vw, 24px);
+        line-height: 1.35;
+      }
 
-    .info-card p,
-    .voice-card p,
-    .faq-card p,
-    .studio-card p {
-      color: var(--soft-ink);
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.82;
-    }
+      .rule {
+        margin-top: 14px;
+      }
 
-    .tag {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 800;
-      background: var(--terra);
-    }
+      .row {
+        grid-template-columns: 1fr;
+      }
 
-    .voice-card .meta {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
+      dt,
+      dd {
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        white-space: normal;
+      }
 
-    .faq-card h3 {
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-      color: var(--ink);
-    }
+      dt {
+        padding-top: 14px;
+        padding-bottom: 4px;
+        font-size: 12px;
+        background: transparent;
+      }
 
-    .faq-card h3::before {
-      color: var(--terra);
-      content: "Q.";
-      font-size: 18px;
-    }
+      dd {
+        padding-bottom: 14px;
+        font-size: 13px;
+      }
 
-    .faq-card p::before {
-      display: block;
-      margin-bottom: 2px;
-      color: var(--terra);
-      content: "A.";
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .compare {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .compare span {
-      padding: 10px 8px;
-      border-radius: 8px;
-      color: var(--soft-ink);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.45;
-      background: var(--paper);
-    }
-
-    .final {
-      padding: 60px 22px 92px;
-      text-align: center;
-    }
-
-    .final .quote {
-      margin-bottom: 24px;
-      text-align: left;
-    }
-
-    .fixed-cta {
-      position: sticky;
-      bottom: 0;
-      z-index: 10;
-      padding: 10px 14px 12px;
-      background: rgba(255, 250, 247, 0.92);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 -1px 0 rgba(87, 63, 56, 0.12);
-    }
-
-    .fixed-cta .cta {
-      min-height: 50px;
-      margin: 0;
-      font-size: 14px;
-    }
-
-    @media (max-width: 390px) {
-      .phone {
-        width: 100%;
+      .footer {
+        margin-top: 16px;
+        font-size: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="phone">
-    <section class="hero" aria-labelledby="fv-function">
-      <div class="brand"><span>GRACE</span>CREAM</div>
-      <p class="label">FV 01 / FUNCTION</p>
-      <h1 id="fv-function">若々しさは、<br>肌の"質感"で<br>つくられる。</h1>
-      <p class="lead">
-        年齢を重ねるほど大切なのは、隠すことではなく、
-        <span class="strong">ハリ・艶・血色感を育てること。</span>
-        毎日数分。自分を慈しむ時間が、明日の私の印象を変えていく。
-      </p>
-      <a class="cta" href="#line">LINEで詳しく見る</a>
+  <main class="page">
+    <header class="header">
+      <img class="logo" src="line_oa_chat_260626_172405.jpg" alt="AI教科書">
+      <p class="label">LEGAL INFORMATION</p>
+      <h1>特定商取引法に基づく表記</h1>
+      <div class="rule" aria-hidden="true"></div>
+    </header>
+
+    <section class="card" aria-label="特定商取引法に基づく表記の詳細">
+      <dl>
+        <div class="row">
+          <dt>販売会社の名称</dt>
+          <dd>株式会社ICORE</dd>
+        </div>
+        <div class="row">
+          <dt>運営責任者</dt>
+          <dd>代表取締役 安藤大嗣</dd>
+        </div>
+        <div class="row">
+          <dt>電話番号</dt>
+          <dd>090-6118-8553</dd>
+        </div>
+        <div class="row">
+          <dt>メールアドレス</dt>
+          <dd>icore.officials@gmail.com</dd>
+        </div>
+        <div class="row">
+          <dt>お支払い方法</dt>
+          <dd>クレジットカードにて決済</dd>
+        </div>
+        <div class="row">
+          <dt>販売価格</dt>
+          <dd>商品申込ページに記載</dd>
+        </div>
+        <div class="row">
+          <dt>商品代金以外の必要金額</dt>
+          <dd>ありません。</dd>
+        </div>
+        <div class="row">
+          <dt>返品・返金について</dt>
+          <dd>コンテンツの性質上、購入後のご返金には応じることができません。</dd>
+        </div>
+        <div class="row">
+          <dt>動作環境</dt>
+          <dd>Safari 12以降 / Google Chrome 最新版 / Firefox 最新版</dd>
+        </div>
+        <div class="row">
+          <dt>免責事項</dt>
+          <dd>サーバートラブル・ネットワークトラブルその他不可抗力により生じたサービスの提供不能・中断等については一切の責任を負いません。</dd>
+        </div>
+        <div class="row">
+          <dt>表現、及び商品に関する注意書き</dt>
+          <dd>本商品に示された表現や再現性には個人差があり、必ずしも利益や効果を保証したものではございません。</dd>
+        </div>
+      </dl>
     </section>
 
-    <section class="hero alt" aria-labelledby="fv-emotion">
-      <div class="brand"><span>GRACE</span>SELF CARE</div>
-      <p class="label">FV 02 / EMOTION</p>
-      <h1 id="fv-emotion">明日も頑張りたい<br>私のために、<br>今日、自分を満たす。</h1>
-      <p class="lead">
-        仕事も。家族も。自分の好きなことも。全部を諦めたくない。
-        <span class="strong">"自分の好きな自分でいるために"</span>自分を整える。
-      </p>
-      <a class="cta" href="#line">LINEで詳しく見る</a>
-      <p class="note">広告クリエイティブの切り口ごとにFVを出し分け</p>
-    </section>
-
-    <section class="section tint">
-      <p class="label">SECTION 01 / PROBLEM</p>
-      <h2>こんなことは<br>ありませんか？</h2>
-      <ul class="check-list">
-        <li>昔より太りやすくなった</li>
-        <li>最近、疲れて見えることが増えた</li>
-        <li>鏡を見るたび、なんとなく老けた気がする</li>
-        <li>肌のハリや血色感がなくなった</li>
-        <li>本当はもっとキレイでいたい</li>
-        <li>仕事も家族も忙しく、自分のことは後回し</li>
-        <li>ケアしたい気持ちはあるけれど、何から始めればいいかわからない</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <p class="label">SECTION 02 / REFRAME</p>
-      <h2>必要なのは<br>"余白"でした</h2>
-      <div class="stack body-copy">
-        <p>頑張ることが嫌いなわけではない。仕事も家族も自分の好きも、全部楽しみたい。</p>
-        <p>でも忙しさの中で、"自分の好きな自分"から離れてしまう。</p>
-        <div class="quote">必要なのは頑張ることをやめることではなく、自分の好きな自分でいられるための余白。</div>
-      </div>
-    </section>
-
-    <section class="section deep">
-      <p class="label">SECTION 03 / HABIT</p>
-      <h2>セルフケアは、<br>"余裕がある人"がするもの？</h2>
-      <div class="stack body-copy">
-        <div class="quote">余裕があるからセルフケアをしているのではなく、セルフケアをしているから、人生を楽しむ余裕が生まれている。</div>
-        <p>忙しいからこそ。頑張っているからこそ。自分を整える時間が必要なのです。</p>
-        <p>忙しいのに、いつも素敵な人がしていること。それは特別な美容でも、特別な才能でもありません。</p>
-        <div class="quote">自分を後回しにしないことを、習慣にしているだけ。</div>
-        <p>自分を満たす。自分を整える。自分を好きでいる。その積み重ねが、年齢を重ねるほど美しさと豊かさになっていくのです。</p>
-      </div>
-    </section>
-
-    <section class="section tint">
-      <p class="label">SECTION 04 / BENEFIT</p>
-      <h2>自分を整えると、<br>少しずつ変わり始める</h2>
-      <ul class="simple-list">
-        <li>ハリのある印象へ</li>
-        <li>血色感のある、若々しい印象に</li>
-        <li>香りに癒され、呼吸が深くなる</li>
-        <li>自分を好きになれる</li>
-        <li>心に余白が生まれる</li>
-        <li>また頑張ろうと思える</li>
-        <li>周りにも優しくなれる</li>
-        <li>毎日を楽しめる、自分らしくいられる</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <p class="label">SECTION 05 / STORY</p>
-      <h2>なぜ、<br>GRACEをつくったのか</h2>
-      <div class="photo-slot">LILY PHOTO</div>
-      <div class="stack body-copy">
-        <p>GRACEは、頑張ることをやめるためではなく、頑張り続けても壊れない自分でいられるように生まれました。</p>
-        <p>女性が活躍できる役割が増えた時代。その一方で、どれだけ社会で活躍していても、体は昔と変わらない女性のままです。</p>
-        <p>女性が活躍する時代だからこそ、体と心を守るセルフケアが必要だと感じています。</p>
-        <p>エステティシャン時代、忘れられない女性がいました。仕事に生きがいを感じていたその方は、働けなくなったことで自分の価値を見失い、すっかり抜け殻のようになってしまったのです。</p>
-        <div class="quote">頑張れる女性ほど、頑張り続けられるものが必要なんだと。</div>
-        <p>何度も作り直した、絶妙なバランス。パッケージの一部にも、女性らしさをこめました。</p>
-        <p>自分をケアし、体と心を守りながら仕事を楽しむ。挑戦する。軽やかに生きる。そんな女性を応援したくて、GRACEは生まれました。</p>
-        <div class="quote">みなさまのおかげで、リリナージュ®︎は10周年を迎えました。</div>
-        <p>"キレイと幸せはイコールではない"と気づいたあの日から、自分を好きになり、心も満たされる人を増やしたい一心で歩んできた10年間。</p>
-        <p>これからも、「何歳になっても、自分を愛でて、自然体で軽やかに生きていく」この価値観を、世界へ伝えていきたいと思います。</p>
-        <p>リリナージュ®︎代表　LILY</p>
-      </div>
-    </section>
-
-    <section class="section tint">
-      <p class="label">SECTION 06 / PRODUCT</p>
-      <h2>肌だけではなく、<br>心まで満たすために</h2>
-      <article class="product-card">
-        <div class="product-visual" aria-hidden="true"></div>
-        <h3>GRACEクリーム</h3>
-        <p class="price">10,000円<span>税込</span></p>
-        <p class="body-copy">なめらかでコクのあるテクスチャーが肌になじみ、"滑りすぎず、止まりすぎない"設計で手のひらの感覚を心地よくサポート。</p>
-      </article>
-      <div class="card-list">
-        <article class="info-card">
-          <span class="tag">成分カード</span>
-          <h3>ハリ印象を支える保湿・整肌成分</h3>
-          <p>ザクロ果実エキス／ヒオウギエキス／豆乳発酵液は、ふっくらとしたハリ印象を支える保湿成分。カーネーション花エキスは、しなやかな肌印象へ導く整肌成分。ショウガ根エキス／トルマリンは、マッサージ併用ですこやかな肌状態へ。</p>
-        </article>
-        <article class="info-card">
-          <span class="tag">ボトル構造</span>
-          <h3>手に取るたびに心地よいボトル</h3>
-          <p>プッシュが軽く、専用パウチをセットして使用するため、クリームが直接触れず繰り返し使える構造です。</p>
-          <p class="note">6回程度のご使用を目安に新しいボトルへ交換推奨</p>
-        </article>
-        <article class="info-card">
-          <span class="tag">詰め替え</span>
-          <h3>詰め替えパウチ 8,250円（税込）</h3>
-          <p>ボトルはそのまま、中身だけ交換して続けられます。定期購入で継続コストを抑えられます。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="label">SECTION 07 / VOICE</p>
-      <h2>1,312件のショップアンケート＋<br>34件のルクルムアンケートより厳選</h2>
-      <div class="card-list">
-        <article class="voice-card">
-          <span class="tag">継続</span>
-          <p>「これまでいろいろなクリームやオイルを試しても続きませんでしたが、この商品だけは無理なく続けられています。自分の体に意識を向ける時間が増えました」</p>
-          <p class="meta">40代・会社員　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">使用感</span>
-          <p>「今日は疲れたから塗るだけ…と思っても、気づいたらマッサージをしてしまっていた。というくらい自然と使いたくなる使い心地です」</p>
-          <p class="meta">購入者アンケートより　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">ローズ克服</span>
-          <p>「バラの香りが本当に嫌いで、嫌いで。ローズの香りを体に塗るなんてもっての外だったんですが、このグレイスの香りはローズ嫌いの私でも、いい香り〜と思うほど。子どもが小さくて忙しくても、肌に触れて深呼吸する習慣が作れました」</p>
-          <p class="meta">30代・医療関係者　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">身体の変化</span>
-          <p>「むくみが楽になった。しっかり眠れるようになった。マッサージが習慣になり、ボディラインも少しずつ整ってきた」</p>
-          <p class="meta">購入者アンケートより　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">自己肯定感</span>
-          <p>「塗るだけで女子力が底上げされるようなクリームです。気品溢れる香りが大好き。自分の肌に触れる機会が増え、自分をもっと大事にしようと思えるようになりました」</p>
-          <p class="meta">30代・パート・アルバイト　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">機能面</span>
-          <p>「クラシックより肌がもちもちする気がする。容器に取り付ける方法が衛生的！ ふくらはぎのマッサージで夜中に脚がつることが少なくなった」</p>
-          <p class="meta">60代以上・専業主婦　※個人の感想です</p>
-        </article>
-        <article class="voice-card">
-          <span class="tag">香り・贈り物</span>
-          <p>「普段から使っているグレイスを再度使いたいのと、毎日周りへの配慮がばっちりな仕事できる同僚にプレゼントしたくて購入しました」</p>
-          <p class="meta">48歳・会社員　※個人の感想です</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section tint">
-      <p class="label">SECTION 08 / FAQ</p>
-      <h2>よくある質問</h2>
-      <div class="card-list">
-        <article class="faq-card">
-          <h3>忙しくても続けられますか？</h3>
-          <p>毎日数分のセルフケア習慣として設計しています。</p>
-        </article>
-        <article class="faq-card">
-          <h3>なぜ香りにもこだわっているのですか？</h3>
-          <p>肌だけではなく、心まで満たす時間をつくるためです。</p>
-        </article>
-        <article class="faq-card">
-          <h3>顔にも使えますか？</h3>
-          <p>はい。フェイスケアにもお使いいただけます。</p>
-        </article>
-        <article class="faq-card">
-          <h3>敏感肌・アトピー肌でも大丈夫ですか？</h3>
-          <p>ご使用いただいているお客様の声を多数いただいています。パッチテストを推奨します。</p>
-        </article>
-        <article class="faq-card">
-          <h3>クラシックとの違いは？</h3>
-          <p>ラメ有無・テクスチャー・香りを比較できます。</p>
-          <div class="compare">
-            <span>GRACE<br>上品な艶感<br>ローズ調の香り</span>
-            <span>Classic<br>定番使用感<br>ベーシック設計</span>
-          </div>
-        </article>
-        <article class="faq-card">
-          <h3>詰め替えはありますか？</h3>
-          <p>はい、専用の詰め替えパウチをご用意しています。定期購入でお得に続けられます。</p>
-        </article>
-        <article class="faq-card">
-          <h3>続けられるか不安です</h3>
-          <p>「塗るだけでもいい」からスタートできます。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="label">SECTION 09 / STUDIO</p>
-      <h2>続けた先に、<br>もっと深いケアを</h2>
-      <div class="stack body-copy">
-        <p>GRACEを使いながら、もっと深く自分と向き合いたい方へ。</p>
-      </div>
-      <div class="card-list">
-        <article class="studio-card">
-          <span class="tag">オンラインスタジオ</span>
-          <h3>月額10,000円</h3>
-          <p>日々のセルフケアを、暮らしの中で続けるためのオンライン導線。</p>
-        </article>
-        <article class="studio-card">
-          <span class="tag">ルクルムTime</span>
-          <h3>30分レッスン付き</h3>
-          <p>GRACEの時間を、より深いケアへ育てる体験会。</p>
-        </article>
-      </div>
-      <p class="note">売り込みにならない自然な導線として設置</p>
-    </section>
-
-    <section class="section deep final" id="line">
-      <p class="label">FINAL CTA</p>
-      <h2>頑張ることを、<br>やめるためではなく</h2>
-      <div class="quote">
-        仕事も。家族も。自分の好きも。<br>
-        全部を楽しむために。
-      </div>
-      <div class="stack body-copy">
-        <p>明日も、自分の好きな自分でいるために。</p>
-        <p>今日、ほんの数分だけ。</p>
-        <p><span class="strong">自分を満たす時間をつくってみませんか。</span></p>
-      </div>
-      <a class="cta" href="#">LINE登録はこちら</a>
-      <p class="note">登録後：LILYの開発秘話 → お客様の声 → ご購入案内の順でお届け</p>
-    </section>
-
-    <div class="fixed-cta" aria-label="固定CTA">
-      <a class="cta" href="#line">LINE登録はこちら</a>
-    </div>
+    <p class="footer">© 株式会社ICORE</p>
   </main>
 </body>
 </html>
