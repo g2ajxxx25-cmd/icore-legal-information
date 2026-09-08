@@ -3,248 +3,510 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>特定商取引法に基づく表記 | 株式会社ICORE</title>
+  <title>特定商取引法に基づく表示 | 株式会社ICORE</title>
   <style>
     :root {
-      --text: #303033;
-      --muted: #7a7373;
-      --coral: #ee7e70;
-      --peach: #f7c5b4;
-      --lavender: #beb0d9;
-      --gold: #f4bd72;
-      --line: #ead8d3;
-      --bg: #fffaf8;
+      --ink: #303033;
+      --soft: #6f6869;
+      --muted: #988f91;
+      --coral: #ee7f70;
+      --lavender: #b9abd8;
+      --orange: #f4b46d;
+      --cream: #fffaf8;
+      --paper: rgba(255, 255, 255, 0.92);
+      --line: rgba(225, 176, 169, 0.48);
+      --shadow: 0 28px 80px rgba(183, 104, 98, 0.16);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      background: #f3d0c7;
+    }
+
     body {
       margin: 0;
-      color: var(--text);
+      color: var(--ink);
       font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
-      line-height: 1.8;
+      line-height: 1.86;
       background:
-        linear-gradient(135deg, rgba(190, 176, 217, 0.22), transparent 32%),
-        linear-gradient(315deg, rgba(247, 197, 180, 0.6), transparent 38%),
-        var(--bg);
+        radial-gradient(circle at 88% 4%, rgba(185, 171, 216, 0.42), transparent 24%),
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.86), transparent 32%),
+        linear-gradient(150deg, #ffffff 0%, #fff8f5 42%, #f6c8bb 100%);
     }
 
-    .page {
-      width: min(860px, calc(100% - 20px));
-      max-width: 390px;
+    .canvas {
+      width: min(1080px, 100%);
       margin: 0 auto;
-      padding: 44px 0 56px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 250, 248, 0.94) 34%, rgba(247, 193, 179, 0.62)),
+        var(--cream);
     }
 
-    .header {
-      margin-bottom: 28px;
-      text-align: center;
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 650px;
+      padding: 86px 74px 62px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background-image: url("IMG_4258.PNG");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      opacity: 0.28;
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 52%, rgba(255, 255, 255, 0.58) 100%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 250, 248, 0.98) 100%);
     }
 
     .logo {
-      width: 78px;
-      height: 78px;
-      margin: 0 auto 18px;
-      border-radius: 8px;
-      box-shadow: 0 14px 34px rgba(220, 119, 104, 0.18);
+      width: 132px;
+      height: 132px;
+      margin-bottom: 42px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
       object-fit: cover;
     }
 
     .label {
-      margin: 0 0 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin: 0 0 20px;
       color: var(--coral);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .label::before {
+      width: 86px;
+      height: 3px;
+      content: "";
+      background: linear-gradient(90deg, var(--lavender), var(--coral), var(--orange));
     }
 
     h1 {
+      max-width: 760px;
       margin: 0;
-      font-size: clamp(24px, 4.8vw, 34px);
-      font-weight: 700;
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.25;
       letter-spacing: 0.02em;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: var(--soft);
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .highlight {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 42px;
+      padding: 18px 34px 19px;
+      color: #fff;
+      font-size: 34px;
+      font-weight: 800;
       line-height: 1.35;
+      background: linear-gradient(100deg, var(--lavender), var(--coral) 58%, var(--orange));
+      transform: skewX(-7deg);
+      box-shadow: 0 18px 42px rgba(232, 127, 112, 0.22);
     }
 
-    .rule {
-      width: 112px;
-      height: 2px;
-      margin: 18px auto 0;
-      background: linear-gradient(90deg, var(--lavender), var(--coral), var(--gold));
+    .highlight span {
+      display: inline-block;
+      transform: skewX(7deg);
     }
 
-    .card {
-      border: 1px solid rgba(234, 216, 211, 0.9);
-      border-radius: 8px;
+    .content {
+      padding: 0 58px 78px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      border-radius: 18px;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 18px 48px rgba(188, 112, 101, 0.12);
+      box-shadow: var(--shadow);
+      background: var(--paper);
     }
 
-    dl {
-      margin: 0;
+    .section.important {
+      border-color: rgba(238, 127, 112, 0.42);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 241, 0.96));
     }
 
-    .row {
+    .term {
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 285px 1fr;
+      min-height: 118px;
       border-bottom: 1px solid var(--line);
     }
 
-    .row:last-child {
+    .term:last-child {
       border-bottom: 0;
     }
 
-    dt,
-    dd {
+    .term-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 30px 32px;
+      color: #9f6470;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.45;
+      background: rgba(248, 211, 203, 0.34);
+    }
+
+    .term-title::before {
+      flex: 0 0 auto;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      content: "";
+      background: linear-gradient(135deg, var(--lavender), var(--coral));
+      box-shadow: 0 0 0 5px rgba(238, 127, 112, 0.1);
+    }
+
+    .term-body {
+      padding: 30px 34px;
+      color: var(--ink);
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.78;
+      overflow-wrap: anywhere;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .term-body p {
       margin: 0;
-      padding: 18px 22px;
     }
 
-    dt {
-      color: #9d6670;
-      font-size: 13px;
-      font-weight: 700;
-      background: rgba(247, 197, 180, 0.18);
-      overflow-wrap: anywhere;
-      word-break: break-word;
-      white-space: normal;
+    .term-body p + p,
+    .term-body ul + p,
+    .term-body p + ul {
+      margin-top: 18px;
     }
 
-    dd {
-      font-size: 14px;
+    .note {
+      display: block;
+      margin-top: 10px;
+      color: var(--soft);
+      font-size: 22px;
       font-weight: 500;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-      white-space: normal;
+    }
+
+    ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    li::before {
+      position: absolute;
+      top: 0.78em;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      content: "";
+      background: var(--coral);
+    }
+
+    .sub-list {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: 12px;
+      background: rgba(255, 250, 248, 0.72);
     }
 
     .footer {
-      margin-top: 18px;
+      margin: 42px 0 0;
       color: var(--muted);
-      font-size: 11px;
+      font-size: 22px;
+      font-weight: 600;
       text-align: center;
     }
 
-    @media (max-width: 430px) {
-      .page {
-        width: calc(100% - 14px);
-        max-width: 390px;
-        padding: 24px 0 36px;
+    @media (max-width: 760px) {
+      .hero {
+        min-height: auto;
+        padding: 52px 26px 42px;
       }
 
       .logo {
-        width: 66px;
-        height: 66px;
-        margin-bottom: 14px;
+        width: 84px;
+        height: 84px;
+        margin-bottom: 28px;
+        border-radius: 12px;
       }
 
       .label {
-        font-size: 10px;
-      }
-
-      h1 {
-        font-size: clamp(20px, 6.2vw, 24px);
-        line-height: 1.35;
-      }
-
-      .rule {
-        margin-top: 14px;
-      }
-
-      .row {
-        grid-template-columns: 1fr;
-      }
-
-      dt,
-      dd {
-        padding-left: 16px;
-        padding-right: 16px;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-        white-space: normal;
-      }
-
-      dt {
-        padding-top: 14px;
-        padding-bottom: 4px;
-        font-size: 12px;
-        background: transparent;
-      }
-
-      dd {
-        padding-bottom: 14px;
+        gap: 12px;
         font-size: 13px;
       }
 
+      .label::before {
+        width: 44px;
+        height: 2px;
+      }
+
+      h1 {
+        font-size: clamp(32px, 9vw, 54px);
+      }
+
+      .hero-copy {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      .highlight {
+        margin-top: 28px;
+        padding: 12px 18px;
+        font-size: 18px;
+      }
+
+      .content {
+        padding: 0 14px 44px;
+      }
+
+      .section {
+        margin-bottom: 18px;
+        border-radius: 10px;
+      }
+
+      .term {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .term-title {
+        padding: 18px 18px 4px;
+        font-size: 15px;
+        background: transparent;
+      }
+
+      .term-title::before {
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 0 4px rgba(238, 127, 112, 0.1);
+      }
+
+      .term-body {
+        padding: 6px 18px 20px;
+        font-size: 14px;
+      }
+
+      .note {
+        font-size: 12px;
+      }
+
+      .sub-list {
+        padding: 14px;
+        border-radius: 8px;
+      }
+
+      li {
+        padding-left: 18px;
+      }
+
+      li::before {
+        width: 7px;
+        height: 7px;
+      }
+
       .footer {
-        margin-top: 16px;
-        font-size: 10px;
+        margin-top: 28px;
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="header">
+  <main class="canvas">
+    <section class="hero">
       <img class="logo" src="line_oa_chat_260626_172405.jpg" alt="AI教科書">
       <p class="label">LEGAL INFORMATION</p>
-      <h1>特定商取引法に基づく表記</h1>
-      <div class="rule" aria-hidden="true"></div>
-    </header>
-
-    <section class="card" aria-label="特定商取引法に基づく表記の詳細">
-      <dl>
-        <div class="row">
-          <dt>販売会社の名称</dt>
-          <dd>株式会社ICORE</dd>
-        </div>
-        <div class="row">
-          <dt>運営責任者</dt>
-          <dd>代表取締役 安藤大嗣</dd>
-        </div>
-        <div class="row">
-          <dt>電話番号</dt>
-          <dd>090-6118-8553</dd>
-        </div>
-        <div class="row">
-          <dt>メールアドレス</dt>
-          <dd>icore.officials@gmail.com</dd>
-        </div>
-        <div class="row">
-          <dt>お支払い方法</dt>
-          <dd>クレジットカードにて決済</dd>
-        </div>
-        <div class="row">
-          <dt>販売価格</dt>
-          <dd>商品申込ページに記載</dd>
-        </div>
-        <div class="row">
-          <dt>商品代金以外の必要金額</dt>
-          <dd>ありません。</dd>
-        </div>
-        <div class="row">
-          <dt>返品・返金について</dt>
-          <dd>コンテンツの性質上、購入後のご返金には応じることができません。</dd>
-        </div>
-        <div class="row">
-          <dt>動作環境</dt>
-          <dd>Safari 12以降 / Google Chrome 最新版 / Firefox 最新版</dd>
-        </div>
-        <div class="row">
-          <dt>免責事項</dt>
-          <dd>サーバートラブル・ネットワークトラブルその他不可抗力により生じたサービスの提供不能・中断等については一切の責任を負いません。</dd>
-        </div>
-        <div class="row">
-          <dt>表現、及び商品に関する注意書き</dt>
-          <dd>本商品に示された表現や再現性には個人差があり、必ずしも利益や効果を保証したものではございません。</dd>
-        </div>
-      </dl>
+      <h1>特定商取引法に<br>基づく表示</h1>
+      <p class="hero-copy">副業・起業女性のためのAI完全活用教科書に関する販売条件、決済方法、返品特約等の表示です。</p>
+      <div class="highlight"><span>株式会社ICORE</span></div>
     </section>
 
-    <p class="footer">© 株式会社ICORE</p>
+    <div class="content">
+      <section class="section" aria-label="事業者情報">
+        <div class="term">
+          <div class="term-title">販売会社の名称</div>
+          <div class="term-body">株式会社ICORE</div>
+        </div>
+        <div class="term">
+          <div class="term-title">運営責任者</div>
+          <div class="term-body">代表取締役　安藤大嗣</div>
+        </div>
+        <div class="term">
+          <div class="term-title">所在地</div>
+          <div class="term-body">
+            <p>〒450-0002</p>
+            <p>愛知県名古屋市中村区名駅4丁目24番5号　第2森ビル401</p>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">電話番号</div>
+          <div class="term-body">
+            <p>090-6118-8553</p>
+            <span class="note">※ お問い合わせは原則メールにて承っております。</span>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">E-mail</div>
+          <div class="term-body">icore.officials@gmail.com</div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="販売内容">
+        <div class="term">
+          <div class="term-title">サービス名</div>
+          <div class="term-body">副業・起業女性のためのAI完全活用教科書</div>
+        </div>
+        <div class="term">
+          <div class="term-title">販売ページ</div>
+          <div class="term-body">
+            <p>MOSH（当社アカウントページ内の商品ページ）</p>
+            <span class="note">※ 本表示は、購入手続き画面及び当社ウェブサイトに掲載しています。</span>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">販売価格</div>
+          <div class="term-body">
+            <p>購入手続き画面に表示する金額（消費税込み）</p>
+            <span class="note">※ 販売価格は商品ごと及び販売時期により異なります。お申込みの際は、購入手続き画面に表示される金額を必ずご確認ください。</span>
+            <span class="note">※ 分割払いをご利用の場合の回数、月額、支払総額及び一括払いとの差額は、購入手続き画面に表示します。</span>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">商品代金以外の必要金額</div>
+          <div class="term-body">
+            <ul>
+              <li>インターネット回線に接続する機器を利用する場合：インターネットを利用するために必要な通信料、プロバイダー料金、その他インターネット利用のために必要となる料金</li>
+              <li>モバイル機器を利用する場合：電話回線を利用してダウンロードする際に発生するパケット通信料</li>
+              <li>AIツール（Anthropic社提供のClaude等）の利用料金</li>
+              <li>分割払いをご利用の場合の分割手数料</li>
+            </ul>
+            <div class="sub-list">
+              <p>※ 本教材の実践にはClaudeの利用が必要です。無料プランで学習できる内容と、有料プランを推奨する内容が含まれます。プラン料金はお客様のご負担です。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="決済と利用開始">
+        <div class="term">
+          <div class="term-title">お支払方法</div>
+          <div class="term-body">
+            <p>クレジットカード</p>
+            <span class="note">※ 決済は MOSH株式会社が提供する決済システムを通じて行われます。</span>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">お支払期限</div>
+          <div class="term-body">お客様とクレジットカード会社との会員規約に基づきます</div>
+        </div>
+        <div class="term">
+          <div class="term-title">教材の引渡し時期</div>
+          <div class="term-body">決済完了後、直ちにご利用いただけます。ご登録のメールアドレス宛に受講用URLおよび認証情報をお送りします。</div>
+        </div>
+        <div class="term">
+          <div class="term-title">利用期間</div>
+          <div class="term-body">
+            <p>当社が本教材の提供を継続する限り、期間の定めなくご利用いただけます。ただし、本教材の永久的な提供を保証するものではありません。</p>
+            <p>当社が本教材の提供を終了する場合には、原則として、あらかじめ新規の販売を停止したうえで、終了日の6ヶ月前までに告知いたします。</p>
+            <p>詳細は利用規約第5条をご確認ください。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section important" aria-label="返品と解約">
+        <div class="term">
+          <div class="term-title">返品・解約について<br>（返品特約）</div>
+          <div class="term-body">
+            <p>本教材はデジタルコンテンツであり、決済完了と同時に全てのコンテンツが閲覧可能な状態となります。コンテンツの引渡しが完了する性質上、お客様のご都合による返品・解約・返金は、購入後の経過日数を問わず、原則としてお受けできません。</p>
+            <p>次の理由による返金にも応じられません。</p>
+            <ul>
+              <li>内容が期待と異なった、既に知っている内容が含まれていた</li>
+              <li>時間が取れず学習しなかった、途中でやめた</li>
+              <li>実践したが期待した成果が得られなかった</li>
+              <li>AIツールの仕様変更により一部の手順が変わった</li>
+              <li>他社の類似商品を購入した、より安価な情報を見つけた</li>
+            </ul>
+            <p>なお、次の場合はこの限りではありません。</p>
+            <ul>
+              <li>決済システムの不具合等により二重に決済された場合</li>
+              <li>当社の責めに帰すべき事由により、相当期間にわたり本教材を提供できない場合</li>
+              <li>その他法令により返金が必要とされる場合</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="動作環境と免責">
+        <div class="term">
+          <div class="term-title">ソフトウェアの動作環境</div>
+          <div class="term-body">
+            <ul>
+              <li>Google Chrome 最新版</li>
+              <li>Safari 最新版</li>
+              <li>Firefox 最新版</li>
+              <li>Microsoft Edge 最新版</li>
+              <li>インターネットに接続されたPC（推奨）またはスマートフォン</li>
+              <li>Claude（Anthropic社提供）のアカウント</li>
+            </ul>
+            <span class="note">※ 一部レッスンはPCでの操作を前提としています。</span>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">免責事項</div>
+          <div class="term-body">
+            <p>当社は、サーバトラブル、ネットワークトラブルその他不可抗力により生じたサービス・商品の提供不能、中断等については一切その責任を負わないものとします。</p>
+            <p>本教材は、収入の増加、作業時間の短縮その他いかなる成果も保証するものではありません。</p>
+          </div>
+        </div>
+        <div class="term">
+          <div class="term-title">お問い合わせ先</div>
+          <div class="term-body">E-mail：icore.officials@gmail.com</div>
+        </div>
+      </section>
+
+      <p class="footer">© 株式会社ICORE</p>
+    </div>
   </main>
 </body>
 </html>
